@@ -532,6 +532,10 @@ class Service extends Component
      */
     private function _convertFromAdapter(Adapter $adapter): array
     {
+        $duration = 0;
+        if($adapter instanceof \Embed\Adapters\Vimeo) {
+            
+        }
         return [
             'title' => $adapter->title,
             'description' => $adapter->description,
@@ -546,6 +550,7 @@ class Service extends Component
             'width' => $adapter->width,
             'height' => $adapter->height,
             'aspectRatio' => $adapter->aspectRatio,
+            'duration' => 0,
             'authorName' => $adapter->authorName,
             'authorUrl' => $adapter->authorUrl,
             'providerName' => $adapter->providerName,

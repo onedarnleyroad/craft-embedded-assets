@@ -95,6 +95,11 @@ class EmbeddedAsset extends Model implements JsonSerializable
     public $aspectRatio;
 
     /**
+     * @var number
+     */
+    public $duration;
+
+    /**
      * @var string
      */
     public $authorName;
@@ -154,7 +159,7 @@ class EmbeddedAsset extends Model implements JsonSerializable
             ['type', 'default', 'value' => 'link'],
             ['tags', 'each', 'rule' => [StringValidator::class]],
             [['feeds'], 'each', 'rule' => [UrlValidator::class]],
-            [['width', 'height', 'aspectRatio', 'imageWidth', 'imageHeight'], 'number', 'min' => 0],
+            [['width', 'height', 'aspectRatio', 'imageWidth', 'imageHeight', 'duration'], 'number', 'min' => 0],
             [['images', 'providerIcons'], 'each', 'rule' => [ImageValidator::class]],
             ['code', TwigMarkupValidator::class],
         ];
